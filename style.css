@@ -1,0 +1,220 @@
+body {
+    margin: 0;
+}
+/* Grille principale */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 75px 50% 50% 75px;
+    grid-template-areas: 
+    "header"
+    "section1"
+    "section2"
+    "footer";
+    gap: 0px;
+}
+/* Header */
+.header {
+    grid-area: header;
+    background-color: black;
+    display: flex; 
+    justify-content: space-between; 
+    padding: 10px 20px; 
+    color: gold;
+}
+.logo {
+    width: 150px; 
+    height: 50px;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    max-width: 100%; 
+    max-height: 100%; 
+    height: auto;
+}
+
+
+.header .nav a {
+    color: gold;
+    text-decoration: none;
+}
+
+header .nav ul  {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+   
+}
+
+.header .icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header .icons input {
+    padding: 8px;
+    border: 1px solid gold;
+    background-color: transparent;
+    color: gold;
+}
+
+.header .icons button {
+    background: none;
+    color: gold;
+    border: none;
+    cursor: pointer;
+}
+
+.header .icons a {
+    display: inline-block;
+}
+
+.header .icons img {
+    height: 20px;
+    width: auto;
+}
+/* Main */
+.section1 {
+    grid-area: section1;
+    position: relative; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start; 
+    min-height: 600px; 
+    padding: 20px; 
+    background-image: url(assets/photohommeacceuil.png);
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+
+.section1 .text {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    
+    
+}
+
+.section1 .text h1 {
+    padding-top: 30px;
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.section1 .text p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.section1 .button {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    width: fit-content;
+    margin-bottom: 10px;
+}
+
+.section1 .button:hover {
+    background-color: white;
+    color: black;
+}
+
+.section2 {
+    grid-area: section2;
+    display: grid;
+    grid-template-areas: "text image";
+    grid-template-columns: 1fr 1fr;
+    align-items: center; 
+    padding: 40px; 
+    min-height: 500px; /
+}
+
+.section2 .text {
+    grid-area: text;
+    padding-right: 40px; 
+}
+
+.section2 h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.section2 p {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 25px;
+    line-height: 1.6; 
+}
+
+.section2 .button {
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+    border: 1px solid #000;
+    font-weight: 500;
+    padding: 12px 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.section2 .image {
+    grid-area: image;
+    background-image: url(assets/photobijouacceuil.png);
+    width: 100%;
+    height: 100%;
+}
+
+.section2 img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+/* Footer */
+
+footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: space-around; 
+    align-items: center; 
+    background-color: #C29E65;
+    padding: 20px; 
+    color: white;
+}
+
+.footer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.footer-item img {
+    height: 30px; 
+    width: auto;
+}
+
+.footer-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9em;
+}
