@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Glowely</title>
+    <title>Produit</title>
     <link rel="stylesheet" href="./style2.css">
     <link rel="shortcut icon" href="assets/logo.png" type="icon">
 </head>
-<body id="homme">
+<body id="produit">
     <div class="grid-container">
-       <!-- Début du header -->
-       <header class="header">
+
+    <!-- Début du Header -->
+    <header class="header">
         <div class="logo" >
             <img class="logo" src="assets/logo.png" alt="Logo Glowely">
         </div>
@@ -30,29 +31,26 @@
              <a href="#"><img src="assets/favoris.png" alt="Favoris"></a>
             <a href="#"><img src="assets/panier.png" alt="Panier"></a>
             <a href="#"><img src="assets/connexion.png" alt="Connexion"></a>
-            
-        </div>
+            </div>
     </header> 
 
-
-    <!-- Fin du header -->
-        
-        <main>
-            <div class="bijouxpourhomme">
-                <img src="assets/bijouxpourhomme.png" alt="bijouxpourhomme">
+        <!-- Fin du Header -->
+         <!-- Début du main -->
+         <main>
+             <div id="produit-container">
             </div>
-            <h2>Chaines homme</h2>
-            <div id="liste-chaines-homme"></div>
-            <h2>Pendentifs homme</h2>
-            <div id="liste-pendentifs-homme"></div>
-            <h2>Bagues homme</h2>
-            <div id="liste-bagues-homme"></div>
-            <h2>Montres homme</h2>
-            <div id="liste-montres-homme"></div>
-        </main>
-       
+            <button href="" id="bouton">Ajouter au panier</button>
+            <h2>Vous aimeriez aussi</h2>
+        
+             <div id="liste-colliers"></div>
+
+          
+
+         </main>
+         <!-- Fin du main -->
+
         <!-- Debut du Footer -->
-        <footer class="footer">
+         <footer class="footer">
             <div class="item1">
                 <img src="assets/nosboutiques.png" alt="Nos boutiques">
                 <a href="#">Nos boutiques</a>
@@ -65,8 +63,11 @@
                 <img src="assets/contact.png" alt="Contact">
                 <a href="contact.html">Contact</a>
             </div>
+            
+
         </footer> 
         <!-- Fin du footer -->
+
     </div>
     <script src="tableau.js"></script>
     <script src="script.js"></script>

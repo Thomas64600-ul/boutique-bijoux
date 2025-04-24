@@ -3,46 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Glowely</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="./style2.css">
+    <link rel="shortcut icon" href="assets/logo.png" type="icon">
 </head>
-<body>
+<body id="index">
     <div class="grid-container">
+        <!-- Début du header -->
 
         <header class="header">
-            <div class="logo">
-                <img src="assets/logo.png" alt="Logo Glowely">
+            <div class="logo" >
+                <img class="logo" src="assets/logo.png" alt="Logo Glowely">
             </div>
             <nav class="nav">
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
                     <li><a href="femme.html">Femme</a></li>
                     <li><a href="homme.html">Homme</a></li>
-                </ul>
+                     </ul>
             </nav>
+             <div class="search">
+    <input type="text" placeholder="Recherche">
+    <a href="#"><img src="assets/Vector.png" alt="Rechercher"></a>
+   </div>
             <div class="icons">
-                <input type="text" placeholder="Recherche">
-                <button>🔍</button>
-                <a href="#"><img src="assets/favoris.png" alt="Favoris"></a>
+               
+                 <a href="#"><img src="assets/favoris.png" alt="Favoris"></a>
                 <a href="#"><img src="assets/panier.png" alt="Panier"></a>
                 <a href="#"><img src="assets/connexion.png" alt="Connexion"></a>
                 
             </div>
-        </header>
+        </header> 
 
-        <section class="section1">
+        <!-- Fin du header -->
+        <!-- Debut du main  -->
+       <main> 
+
+      
+      
+        <section class="nouveautés">
                 <div class="text">
                     <h1>Les nouveautés</h1>
-                    <p>Le printemps est arrivé ! La nouvelle collection est disponible.</p>
+                    <p>Le printemps est arrivé !<br> La nouvelle collection est disponible.</p>
                     <a href="#" class="button">Découvrir</a>
                 </div>
                 <div class="image">
-                    <img src="assets/photohommeacceuil.png" alt="Homme-acceuil">
-                </div>
-            </div>
+                    <img src="assets/photohommeacceuil.png" alt="Photo d'homme ">
+                </div>     
         </section>
 
-        <section class="section2">
+        <section class="bijoux">
             <div class="text">
                 <h2>Offrir un bijou</h2>
                 <p>C’est transmettre une émotion, graver un souvenir, marquer un moment précieux.
@@ -54,23 +64,29 @@
             <div class="image">
                 <img src="assets/photobijouacceuil.png" alt="Bijoux">
             </div>
+            
         </section>
 
+    </main> 
+    <!-- Fin du main -->
+        <!-- Debut du Footer-->
         <footer class="footer">
-            <div class="footer-item">
+            <div class="item1">
                 <img src="assets/nosboutiques.png" alt="Nos boutiques">
                 <a href="#">Nos boutiques</a>
             </div>
-            <div class="footer-item">
+            <div class="item2">
                 <img src="assets/instagram.png" alt="Instagram">
                 <a href="https://wwww.instagram.com">Suivez-nous !</a>
             </div>
-            <div class="footer-item">
+            <div class="item3">
                 <img src="assets/contact.png" alt="Contact">
                 <a href="contact.html">Contact</a>
             </div>
-        </footer>
-
-    </div>
+        </footer> 
+        <!-- Fin du footer -->
+    <!-- </div> -->
+    <script src="tableau.js"></script>
+    <script src="script1.js"></script>
 </body>
 </html>

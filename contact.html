@@ -3,47 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Accueil - Glowely</title>
+    <link rel="stylesheet" href="./style2.css">
+    <link rel="shortcut icon" href="assets/logo.png" type="icon">
 </head>
-<body>
+<body id="contact">
     <div class="grid-container">
+        <!-- Début du header -->
 
         <header class="header">
-            <div class="logo">
-                <img src="assets/logo.png" alt="Logo Glowely">
+            <div class="logo" >
+                <img class="logo" src="assets/logo.png" alt="Logo Glowely">
             </div>
             <nav class="nav">
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
                     <li><a href="femme.html">Femme</a></li>
                     <li><a href="homme.html">Homme</a></li>
-                </ul>
+                     </ul>
             </nav>
+             <div class="search">
+    <input type="text" placeholder="Recherche">
+    <a href="#"><img src="assets/Vector.png" alt="Rechercher"></a>
+   </div>
             <div class="icons">
-                <input type="text" placeholder="Recherche">
-                <button>🔍</button>
-                <a href="#"><img src="assets/favoris.png" alt="Favoris"></a>
+               
+                 <a href="#"><img src="assets/favoris.png" alt="Favoris"></a>
                 <a href="#"><img src="assets/panier.png" alt="Panier"></a>
                 <a href="#"><img src="assets/connexion.png" alt="Connexion"></a>
                 
             </div>
-        </header>
+        </header> 
+
+        <!-- Fin du header -->
+         <!-- Début du Main -->
+          <main> 
+            <section class="Nous-contacter">
+                <form action="" method="post"></form>
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required><br><br>
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" required><br><br>
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="message">Vos Messages :</label>
+                <textarea id="message" name="message" rows="3" cols="40"></textarea><br><br>
+                <input type="submit" value="Envoyer">
+
+            </section>
+           <section class="reglement">
+            <div class="faq">
+            <h2>FAQ</h2>
+            <h3>Quels types de bijoux propose Glowely ?</h3>
+            <p>Glowely révèle l’élégance à travers des créations uniques en or, argent et pierres précieuses.
+                Chaque bijou est conçu comme une œuvre intemporelle, alliant finesse et caractère.
+                Notre collection célèbre la beauté dans ses moindres détails.</p>
+                <h3>Vos bijoux conviennent-ils aux peaux sensibles ?</h3>
+                <p>Absolument. Nos pièces sont façonnées avec des matériaux nobles et soigneusement sélectionnés.
+                    Nous garantissons des bijoux hypoallergéniques, respectueux des peaux délicates.
+                    Le confort et l’excellence sont au cœur de notre démarche.</p>
+                <h3>Quels sont les délais de livraison ?</h3> 
+                <p>Votre commande est préparée avec le plus grand soin sous 48h ouvrées.
+                    La livraison, assurée par des partenaires de confiance, s’effectue en 2 à 5 jours.
+                    Chaque envoi est suivi et présenté dans un écrin raffiné signé Glowely.</p>  
+                <h3>Est-il possible de retourner un bijou ?</h3>
+                <p>Oui, nous souhaitons que chaque cliente soit pleinement satisfaite.
+                    Vous disposez de 14 jours pour effectuer un retour, dans son écrin d’origine.
+                    Une fois reçu, le bijou est examiné avant validation du remboursement.</p>  
+                </div>   
+          
+                <div class="informations">
+            <H2>Informations</H2>
+            <h3>Coordonnées</h3>
+            <p>Glowely – Maison de Joaillerie Contemporaine
+                Service client : contact@glowely.com | +33 1 85 09 23 45
+                Adresse : 18 rue des Lumières, 75003 Paris – Sur rendez-vous</p>
+            <h3>Horaires</h3>
+            <p>Notre service client est à votre écoute du lundi au vendredi, de 10h à 18h.
+                Chaque message est traité avec attention et discrétion.
+                Nous vous répondons dans les meilleurs délais, sous 24h ouvrées.</p>
+            <h3>À propos</h3>  
+            <p>Glowely incarne une vision moderne du bijou, entre grâce et caractère.
+                Nous créons des pièces inspirées par l’art, la lumière et les émotions.
+                Chaque collection est pensée pour sublimer l’instant et révéler votre éclat.</p> 
+            </div>
+
+           </section>
+
+         </main> 
+         <!-- Fin du Main -->
+
+         <!-- Fin du main -->
+        <!-- Debut du Footer -->
         <footer class="footer">
-            <div class="footer-item">
+            <div class="item1">
                 <img src="assets/nosboutiques.png" alt="Nos boutiques">
                 <a href="#">Nos boutiques</a>
             </div>
-            <div class="footer-item">
+            <div class="item2">
                 <img src="assets/instagram.png" alt="Instagram">
                 <a href="https://wwww.instagram.com">Suivez-nous !</a>
             </div>
-            <div class="footer-item">
+            <div class="item3">
                 <img src="assets/contact.png" alt="Contact">
                 <a href="contact.html">Contact</a>
             </div>
         </footer>
-
+        <!-- Fin du footer -->
     </div>
+    <script src="script.js"></script>
+    <script src="tableau.js"></script>
 </body>
 </html>
