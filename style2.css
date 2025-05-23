@@ -1,816 +1,533 @@
-/* Corps de la page */
-
+/* Styles généraux du corps */
 body {
     margin: 0;
-
-    /*Conteneur principal  */
+    max-width: 100%;
+    overflow-x: hidden;
 }
+
+/* Conteneur principal */
 .grid-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-areas: 
-     "header"
-    "main"
-    "main"
-    "footer";
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    min-height: 100vh;
 }
-/* Début du Header */
+
+/* --- Début du Header --- */
 .header {
-    display: grid;
-    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 10px 20px;
     background-color: #000;
-  }
-  
-  /* Logo */
-  .logo img {
-    height: 100px;
-  }
-  
-  /* Navigation */
-  .nav ul {
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.logo img {
+    height: 80px;
+    max-width: 100%;
+}
+
+.nav ul {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 20px;
     list-style: none;
-  }
-  
-  .nav a {
+    padding: 0;
+    margin: 0;
+}
+
+.nav a {
     text-decoration: none;
     color: #d4a24e;
-    font-size: 16px;
+    font-size: 1rem;
     text-transform: uppercase;
     transition: color 0.3s;
-  }
-  
-  .nav a:hover {
+    white-space: nowrap;
+}
+
+.nav a:hover {
     color: #d4a24e;
-  }
-  
-  /* Barre de recherche */
-  .search {
+}
+
+.search {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    gap: 10px;
-  }
-  
-  .search input[type="text"] {
+    gap: 5px;
+}
+
+.search input[type="text"] {
     background-color: transparent;
     border: none;
     border-bottom: 1px solid #d4a24e;
     color: white;
-    padding: 5px 10px;
+    padding: 5px;
     outline: none;
-    width: 160px;
-  }
-  
-  .search img {
-    height: 16px;
+    width: 100px;
+    max-width: 150px;
+}
+
+.search img {
+    height: 14px;
     cursor: pointer;
-  }
-  
-  /* Icônes */
-  .icons {
+}
+
+.icons {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    gap: 25px;
-    margin-left: 0;
-  }
-  
-  .icons img {
-    height: 22px;
+    gap: 15px;
+}
+
+.icons img {
+    height: 20px;
     cursor: pointer;
     transition: transform 0.2s;
-  }
-  
-  .icons img:hover {
+}
+
+.icons img:hover {
     transform: scale(1.1);
     filter: drop-shadow(0 0 2px #d4a24e);
-  }
+}
+/* --- Fin du Header --- */
 
-/* Fin du Header */
-
-/* Début du main page Index */
-
-#index main{
+/* --- Début du main page Index --- */
+main {
     grid-area: main;
-    
+    padding: 0; /* Enlever le padding ici pour que les sections puissent s'étendre sur toute la largeur */
 }
 
-#index .nouveautés {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: "text image";
-  height: 100vh;
+.section-accueil {
+    display: flex;
+    flex-direction: column; /* Par défaut, les éléments sont empilés sur mobile */
+    align-items: center;
+    text-align: center;
+    padding: 20px 10px; /* Padding latéral réduit pour mobile */
+    margin-bottom: 40px;
+    min-height: 50vh;
+    justify-content: center;
+    overflow: hidden; /* Empêche le contenu de déborder de la section */
 }
 
-
-#index .nouveautés .text {
-    grid-area: text;
-    padding: 4rem;
-    z-index: 1;
+.section-accueil.nouveautés {
+    background-color: #000;
     color: white;
 }
 
-#index .nouveautés .text h1{
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-#index .nouveautés .text p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-#index .nouveautés .button {
-        text-decoration: none;
-        border: 1px solid white;
-        color: white;
-
-
-}
-#index .nouveautés .image {
-    grid-area: image;
-    height: 100%;
-}
-#index .nouveautés .image img{
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
-
-#index .bijoux {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "text image";
-    align-items: center;
+.section-accueil.bijoux {
     background-color: beige;
+    color: black;
     border-radius: 0.5rem;
-    text-align: center;
 }
 
-#index .bijoux .text {
-    grid-area: text;
-   
+.section-accueil .text {
+    padding: 20px;
+    max-width: 600px;
+    width: 100%; /* Assurer que le texte prend toute la largeur disponible */
+    box-sizing: border-box; /* Inclure padding dans la largeur */
 }
 
-#index .bijoux .text h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-
-}
-#index .bijoux .text p {
-    font-size: 1rem;
+.section-accueil .text h1 {
+    font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 
-#index .bijoux .button {
+.section-accueil .text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.section-accueil .text p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.section-accueil .button {
+    display: inline-block;
+    padding: 10px 20px;
     text-decoration: none;
-        border: 1px solid black;
-        color:black;
+    border: 1px solid;
+    color: inherit;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-#index .bijoux .image {
-    grid-area: image;
+.section-accueil.nouveautés .button {
+    border-color: white;
+    color: white;
+}
+.section-accueil.nouveautés .button:hover {
+    background-color: white;
+    color: black;
+}
+
+.section-accueil.bijoux .button {
+    border-color: black;
+    color: black;
+}
+.section-accueil.bijoux .button:hover {
+    background-color: black;
+    color: white;
+}
+
+.section-accueil .image {
+    width: 100%; /* Le conteneur de l'image prend toute la largeur */
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Espacement avec le texte sur mobile */
 }
 
-#index .bijoux .image img {
-    width: 100%;
+.section-accueil .image img {
+    width: 100%; /* L'image prend 100% de la largeur de son conteneur */
+    max-width: 600px; /* Limiter la taille maximale de l'image sur les grands écrans */
     height: auto;
     object-fit: cover;
     border-radius: 0.5rem;
-
+    display: block;
 }
+/* --- Fin du main de la page Index --- */
 
-/* Fin du main de la page Index */
-/* Debut du main pour la page Homme */
-
-
-.bijouxpourhomme img {
+/* --- Début du main pour les pages Homme et Femme --- */
+.page-categorie img.hero-image {
     width: 100%;
+    height: auto;
+    max-height: 400px;
     object-fit: cover;
+    margin-bottom: 20px;
 }
 
-#homme h2 {
+.page-categorie h2 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.liste-produits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid black;
+    margin-bottom: 40px;
+}
+
+.carte-produit {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
 }
 
+.carte-produit img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
 
-#liste-chaines-homme {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "AegisSteel  OnyxFlame NordicDrift NoirÉlément";
-    gap: 20px;
-    padding: 20px;
-    border: 1px solid black;
+.carte-produit a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.carte-produit strong {
+    display: block;
+    margin-top: 5px;
+}
+
+/* --- Fin du main de la page Homme et Femme --- */
+
+/* --- Début du main de la page Produit (produit.html) --- */
+#produit-container {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-}
-.AegisSteel {
-    grid-area: AegisSteel ;
-    text-align: center;
-    padding: 10px;
-}
-.AegisSteel  p {
-    border: 1px solid black;
-}
-.OnyxFlame {
-    grid-area: OnyxFlame;
-    text-align: center;
-    padding: 10px;
-}
-.OnyxFlame p {
-    border: 1px solid black;
-}
-.NordicDrift {
-    grid-area: NordicDrift;
-    text-align: center;
-    padding: 10px;
-}
-.NordicDrift p {
-    border: 1px solid black;
-}
-.NoirÉlément {
-    grid-area: NoirÉlément;
-    text-align: center;
-    padding: 10px;
-}
-.NoirÉlément p {
-    border: 1px solid black;
-}
-
-
-#liste-pendentifs-homme {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "VortexShield  NuitTotem LupoNero NovaOris";
     gap: 20px;
     padding: 20px;
-    border: 1px solid black;
-    
-}
-.VortexShield {
-    grid-area: VortexShield ;
-    text-align: center;
-    align-items: center;
-  
-}
-.VortexShield  p {
-    border: 1px solid black;
-}
-.NuitTotem {
-    grid-area: NuitTotem;
-    text-align: center;
-    padding: 10px;
-   
-}
-.NuitTotem p {
-    border: 1px solid black;
-}
-.LupoNero {
-    grid-area: LupoNero;
-    text-align: center;
-    padding: 10px;
-   
-}
-.LupoNero p {
-    border: 1px solid black;
-}
-.NovaOris{
-    grid-area: NovaOris;
-    text-align: center;
-    padding: 10px;
-  
-}
-.NovaOris p {
-    border: 1px solid black;
-}  
-
-#liste-bagues-homme {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "IronPulse  ObsidianSoul Serpentum FrostSigil";
-    gap: 20px;
-    padding: 20px;
-    border: 1px solid black;
-}
-.IronPulse {
-    grid-area: IronPulse ;
-    text-align: center;
-    padding: 10px;
-}
-.IronPulse  p {
-    border: 1px solid black;
-}
-.ObsidianSoul {
-    grid-area: ObsidianSoul;
-    text-align: center;
-    padding: 10px;
-}
-.ObsidianSoul p {
-    border: 1px solid black;
-}
-.Serpentum {
-    grid-area: Serpentum;
-    text-align: center;
-    padding: 10px;
-}
-.Serpentum p {
-    border: 1px solid black;
-}
-.FrostSigil{
-    grid-area: FrostSigil;
-    text-align: center;
-    padding: 10px;
-}
-.FrostSigil p {
-    border: 1px solid black;
-} 
-
-
-#liste-montres-homme{
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "ChronoDrift MidnightCore AtlasEdge ÉclipseRoyale";
-    gap: 20px;
-    padding: 20px;
-    border: 1px solid black;
-}
-.ChronoDrift {
-    grid-area: ChronoDrift ;
-    text-align: center;
-    padding: 10px;
-}
-.ChronoDrift  p {
-    border: 1px solid black;
-}
-.MidnightCore {
-    grid-area: MidnightCore;
-    text-align: center;
-    padding: 10px;
-}
-.MidnightCore p {
-    border: 1px solid black;
-}
-.AtlasEdge{
-    grid-area: AtlasEdge;
-    text-align: center;
-    padding: 10px;
-}
-.AtlasEdge p {
-    border: 1px solid black;
-}
-.ÉclipseRoyale{
-    grid-area: ÉclipseRoyale;
-    text-align: center;
-    padding: 10px;
-}
-.ÉclipseRoyale p {
-    border: 1px solid black;
-} 
-
-
-/* Fin du main de la page Homme*/
-
-/* Début du main de la page Femme */
-
-
-.bijouxpourfemme img {
-    width: 100%;
-    object-fit: cover;
-}
-
-
-#femme h2 {
-    align-items: center;
-    text-align: center;
-}
-
-#liste-colliers-femme{
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "LunaVéla ÉclatRose NéonÉlise SableNacré";
-    gap: 20px;
-    padding: 20px;
-    border: 1px solid black;
-}
-.LunaVéla {
-    grid-area: LunaVéla ;
-    text-align: center;
-    padding: 10px;
-}
-.LunaVéla  p {
-    border: 1px solid black;
-}
-.ÉclatRose {
-    grid-area: ÉclatRose;
-    text-align: center;
-    padding: 10px;
-}
-.ÉclatRose p {
-    border: 1px solid black;
-}
-.NéonÉlise{
-    grid-area: NéonÉlise;
-    text-align: center;
-    padding: 10px;
-}
-.NéonÉlise p {
-    border: 1px solid black;
-}
-.SableNacré {
-    grid-area: SableNacré;
-    text-align: center;
-    padding: 10px;
-}
-.SableNacré p {
-    border: 1px solid black;
-} 
-
-#liste-pendentifs-femme{
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "SableNacré AuraMystica Feuilled’Orée PerlaClara";
-    gap: 20px;
-    padding: 20px;
-    border: 1px solid black;
-}
-.SableNacré {
-    grid-area: SableNacré ;
-    text-align: center;
-    padding: 10px;
-}
-.SableNacré  p {
-    border: 1px solid black;
-}
-.AuraMystica {
-    grid-area: AuraMystica;
-    text-align: center;
-    padding: 10px;
-}
-.AuraMystica p {
-    border: 1px solid black;
-}
-.Feuilled’Orée{
-    grid-area: Feuilled’Orée;
-    text-align: center;
-    padding: 10px;
-}
-.Feuilled’Orée p {
-    border: 1px solid black;
-}
-.PerlaClara{
-    grid-area: PerlaClara;
-    text-align: center;
-    padding: 10px;
-}
-.PerlaClara p {
-    border: 1px solid black;
-}
-
-#liste-anneaux-femme{
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "ÉtoileFine TerraLune FlammeLibre  LigneClaire";
-    gap: 20px;
-    padding: 20px;
-    border: 1px solid black;
-}
-.ÉtoileFine {
-    grid-area: ÉtoileFine ;
-    text-align: center;
-    padding: 10px;
-}
-.ÉtoileFine  p {
-    border: 1px solid black;
-}
-.TerraLune {
-    grid-area: TerraLune;
-    text-align: center;
-    padding: 10px;
-}
-.TerraLune p {
-    border: 1px solid black;
-}
-.FlammeLibre{
-    grid-area: FlammeLibre;
-    text-align: center;
-    padding: 10px;
-}
-.FlammeLibre p {
-    border: 1px solid black;
-}
-.LigneClaire{
-    grid-area: LigneClaire;
-    text-align: center;
-    padding: 10px;
-}
-.LigneClaire p {
-    border: 1px solid black;
-}
-#liste-pendentifs-femme{
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "SableNacré AuraMystica Feuilled’Orée PerlaClara";
-    gap: 20px;
-    padding: 20px;
-    border: 1px solid black;
-}
-.SableNacré {
-    grid-area: SableNacré ;
-    text-align: center;
-    padding: 10px;
-}
-.SableNacré  p {
-    border: 1px solid black;
-}
-.AuraMystica {
-    grid-area: AuraMystica;
-    text-align: center;
-    padding: 10px;
-}
-.AuraMystica p {
-    border: 1px solid black;
-}
-.Feuilled’Orée{
-    grid-area: Feuilled’Orée;
-    text-align: center;
-    padding: 10px;
-}
-.Feuilled’Orée p {
-    border: 1px solid black;
-}
-.PerlaClara{
-    grid-area: PerlaClara;
-    text-align: center;
-    padding: 10px;
-}
-.PerlaClara p {
-    border: 1px solid black;
-}
-
-#liste-boucles-femme {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "ComèteDouce SoleaBohème NocturneÉlégance  RoséeAntique";
-    gap: 20px;
-    padding: 20px;
-    border: 1px solid black;
-}
-.ComèteDouce {
-    grid-area: ComèteDouce ;
-    text-align: center;
-    padding: 10px;
-}
-.ComèteDouce  p {
-    border: 1px solid black;
-}
-.SoleaBohème {
-    grid-area: SoleaBohème;
-    text-align: center;
-    padding: 10px;
-}
-.SoleaBohème p {
-    border: 1px solid black;
-}
-.NocturneÉlégance{
-    grid-area: NocturneÉlégance;
-    text-align: center;
-    padding: 10px;
-}
-.NocturneÉlégance p {
-    border: 1px solid black;
-}
-.RoséeAntique{
-    grid-area: RoséeAntique;
-    text-align: center;
-    padding: 10px;
-}
-.RoséeAntique p {
-    border: 1px solid black;
-}
- /*Fin du main de la page Femme  */
-
-
- /* Début du main de la page Produit */
-
- 
- #produit-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    padding: 40px;
-    align-items: start;
-    margin-bottom: 100px;
-    max-width: 1200px;
+    margin-bottom: 50px;
+    max-width: 900px;
     margin-inline: auto;
-  }
-  
-  #produit-container .image {
     text-align: center;
-  }
-  
-  #produit-container img {
+}
+
+#produit-container img {
     width: 100%;
-    max-width: 450px;
+    max-width: 400px;
     height: auto;
     display: block;
     margin: auto;
-  }
-  
-  #produit-container p {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
-    text-align: center;
-  }
-  
-  #produit-container  h1 {
+}
+
+#produit-container h1 {
     font-size: 2rem;
     font-weight: bold;
-  }
-  
-  #produit-container .text .description {
+    margin-bottom: 10px;
+}
+
+#produit-container p {
     font-size: 1rem;
-    max-width: 100%;
-    margin-top: 10px;
-  }
-  
-  #produit-container .text .prix {
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+#produit-container .text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#produit-container .prix {
     font-weight: bold;
-  }
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
 
 #bouton {
     color: white;
     background-color: #BE843D;
     font-size: large;
     border: none;
-    margin-left: 20px;
-   
-   
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
 }
 
-#liste-colliers {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "LuneÉclatante ÉcorceDorée FlammeHaute  Clartéd’Azur";
+/* --- Fin du main de la page Produit --- */
+
+/* --- Début du main de la page Contact --- */
+main h1 { /* Nouveau style pour le titre principal de la page contact */
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.Nous-contacter {
+    display: flex;
+    flex-direction: column;
     gap: 20px;
     padding: 20px;
-    border: 1px solid black;
+    border: 1px solid #ccc; /* Bordure ajoutée */
+    background-color: #F9F9F9; /* Couleur de fond légère */
+    border-radius: 5px;
+    max-width: 700px; /* Limiter la largeur */
+    margin: 20px auto; /* Centrer le formulaire */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Ombre légère */
 }
-.LuneÉclatante {
-    grid-area: LuneÉclatante ;
+
+.Nous-contacter h2 {
     text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.Nous-contacter label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    font-weight: bold;
+    color: #555;
+}
+
+.Nous-contacter input[type="text"],
+.Nous-contacter input[type="email"],
+.Nous-contacter textarea {
+    width: calc(100% - 22px); /* Ajuster la largeur pour le padding */
     padding: 10px;
-}
-.LuneÉclatante  p {
-    border: 1px solid black;
-}
-.ÉcorceDorée{
-    grid-area: ÉcorceDorée;
-    text-align: center;
-    padding: 10px;
-}
-.ÉcorceDorée p {
-    border: 1px solid black;
-}
-.FlammeHaute{
-    grid-area: FlammeHaute;
-    text-align: center;
-    padding: 10px;
-}
-.FlammeHaute p {
-    border: 1px solid black;
-}
-.Clartéd’Azur{
-    grid-area: Clartéd’Azur;
-    text-align: center;
-    padding: 10px;
-}
-.Clartéd’Azur p {
-    border: 1px solid black;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* IMPORTANT : Inclut le padding dans la largeur */
+    font-size: 1rem;
 }
 
-
-/* Fin du main de la page Produit */
-
-
-
-/* Debut du main de la page Contact */
-
-#contact .grid-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-    "header"
-    "main"
-    "main"
-    "footer";
+.Nous-contacter textarea {
+    resize: vertical; /* Permet le redimensionnement vertical */
 }
-#contact .Nous-contacter {
-    
-    display: grid;
-    grid-template-columns: 1fr ;
+
+.Nous-contacter input[type="submit"] {
+    background-color: #BE843D;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.Nous-contacter input[type="submit"]:hover {
+    background-color: #a6732d;
+}
+
+.reglement {
+    display: flex;
+    flex-direction: column; /* Empilement par défaut sur mobile */
     gap: 20px;
     padding: 20px;
-    border: 1px solid black;
-    background-color: #F2EDE6;
-    border-radius: 5px 5px 5px 5px;
-}
-#contact .Nous-contacter input,
-#contact .Nous-contacter textarea {
-  width: 75%;
-  margin: 0 auto; 
-  display: block;
+    max-width: 1000px; /* Limiter la largeur de cette section */
+    margin: 40px auto; /* Centrer cette section */
 }
 
-#contact .reglement{
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr ;
-    grid-template-areas: "faq informations";
-    gap: 20px;
+.faq, .informations {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #F9F9F9;
     padding: 20px;
-    border: 1px solid black;
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Ombre légère */
+}
+
+.faq h2, .informations h2 {
     text-align: center;
+    margin-bottom: 20px;
+    color: #333;
 }
 
-#contact .faq {
-    grid-area: faq;
-    border: 1px solid black;
-    border-radius: 5px 5px 5px 5px;
-    background-color: #F2EDE6;
-}
-#contact .informations {
-    grid-area: informations ;
-    border: 1px solid black;
-    border-radius: 5px 5px 5px 5px;
-    background-color:#F2EDE6;
+.faq h3, .informations h3 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: #BE843D; /* Couleur pour les titres de questions/sections */
+    font-size: 1.2rem;
 }
 
+.faq p, .informations p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #666;
+}
 
+.informations a { /* Style pour les liens email/téléphone dans informations */
+    color: #BE843D;
+    text-decoration: none;
+}
+.informations a:hover {
+    text-decoration: underline;
+}
 
-/* Fin du main de la page Contact */
-/* Début du Footer */
+/* --- Fin du main de la page Contact --- */
 
+/* --- Début du Footer --- */
 .footer {
     grid-area: footer;
     background-color: #C29E65;
-    display: grid;
-    grid-template-areas: "item1 item2 item3";
-    grid-template-columns: 1fr auto 1fr;
-    margin-left: 0;
-    margin-left: 0;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-  
+    padding: 20px;
+    gap: 15px;
 }
 
-.item1 {
-    grid-area: item1;
-    text-align: left;
-   
-}
-
-.item2 {
-    grid-area: item2;
+.footer div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
-.item3 {
-    grid-area: item3;
-    text-align: right;
+.footer img {
+    width: 30px;
+    margin-right: 8px;
 }
 
-.item1 a, .item2 a,.item3 a {
+.footer a {
     text-decoration: none;
     color: white;
-   align-items: center;
+    font-size: 0.9rem;
+}
+/* --- Fin du Footer --- */
+
+
+/* --- MEDIA QUERIES --- */
+
+/* Pour les écrans plus grands que les mobiles (tablettes et desktops) */
+@media (min-width: 600px) {
+    /* Header */
+    .header {
+        grid-template-columns: 1fr 2fr 2fr 1fr;
+        flex-wrap: nowrap;
+        padding: 20px 40px;
+    }
+
+    .nav ul {
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    .search input[type="text"] {
+        width: 160px;
+    }
+
+    .icons {
+        justify-content: flex-end;
+    }
+
+    /* Page Index */
+    .section-accueil {
+        flex-direction: row; /* Revenir à l'affichage en ligne */
+        text-align: left;
+        justify-content: space-around;
+        gap: 20px;
+        padding: 40px; /* Padding augmenté pour les grands écrans */
+    }
+
+    .section-accueil .text,
+    .section-accueil .image {
+        flex: 1; /* Permettre aux deux éléments de prendre la moitié de l'espace */
+        max-width: 50%; /* Limiter explicitement la largeur à 50% du conteneur */
+    }
+
+    .section-accueil.nouveautés .image {
+        order: 1;
+    }
+
+    .section-accueil.bijoux .image {
+        order: -1;
+    }
+
+    .section-accueil .image img {
+        margin-top: 0;
+    }
+
+    /* Page Contact - AJUSTEMENT */
+    .reglement {
+        display: flex; /* S'assurer que le display flex est bien appliqué dans la media query */
+        flex-direction: row;
+        justify-content: space-around; /* Pour distribuer l'espace */
+        gap: 40px; /* Espace entre FAQ et Informations */
+        align-items: flex-start; /* Aligner les éléments en haut si leurs contenus ont des hauteurs différentes */
+    }
+    .faq, .informations {
+        flex: 1;
+        min-width: 300px; /* S'assurer qu'ils ont une largeur minimale pour se mettre côte à côte */
+        max-width: 48%; /* Limiter la largeur maximale pour éviter qu'ils ne soient trop larges */
+    }
+
+
+    /* Footer */ /* <<< AJOUTE CETTE NOUVELLE SECTION */
+    .footer {
+        flex-direction: row; /* Aligner les éléments côte à côte */
+        justify-content: center; /* Centrer les éléments horizontalement */
+        gap: 80px; /* Augmenter l'espacement entre les éléments du footer sur desktop */
+    }
+
+    .footer div { /* Les conteneurs individuels dans le footer */
+        flex-direction: row; /* S'assurer que l'image et le texte dans chaque item sont aussi côte à côte */
+        align-items: center;
+    }
 }
 
-.item1 img , .item2 img , .item3 img {
-    width: 50px;
-    margin-right: 5px;
-}
